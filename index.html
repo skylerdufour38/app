@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Store Archive</title>
+    <meta
+      name="description"
+      content="Browse an archived collection of iOS apps and IPA downloads."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="App Store Archive branding">
+          <div class="brand-mark">A</div>
+          <div>
+            <p class="eyebrow">iOS archive browser</p>
+            <h1>App Store Archive</h1>
+          </div>
+        </div>
+        <a class="download-button" href="#download" aria-label="Download app archive zip">
+          Download ZIP
+        </a>
+      </header>
+
+      <main>
+        <section class="summary-panel card" id="download">
+          <div class="summary-header">
+            <span class="badge">Archive</span>
+            <span class="meta-pill">iOS</span>
+          </div>
+          <div class="summary-grid">
+            <div>
+              <p class="label">Archive name</p>
+              <h2>App Store Collection</h2>
+            </div>
+            <div>
+              <p class="label">Download size</p>
+              <h2>798.3 MB</h2>
+            </div>
+            <div>
+              <p class="label">Archive type</p>
+              <h2>ZIP-based IPA collection</h2>
+            </div>
+          </div>
+        </section>
+
+        <section class="toolbar card" aria-label="App browser controls">
+          <label class="search-field" for="searchInput">
+            <span>Search apps</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search by app name, bundle ID, or IPA file"
+              autocomplete="off"
+            />
+          </label>
+
+          <label class="sort-field" for="sortSelect">
+            <span>Sort by</span>
+            <select id="sortSelect">
+              <option value="name">Name</option>
+              <option value="size-desc">Largest first</option>
+              <option value="size-asc">Smallest first</option>
+              <option value="min-os">Minimum OS</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="stats-row" aria-label="Archive statistics">
+          <div class="stat card">
+            <span class="stat-label">Apps</span>
+            <strong id="appCount">0</strong>
+          </div>
+          <div class="stat card">
+            <span class="stat-label">Total size</span>
+            <strong id="totalSize">0 MB</strong>
+          </div>
+          <div class="stat card">
+            <span class="stat-label">Min OS</span>
+            <strong id="lowestMinOS">0.0</strong>
+          </div>
+        </section>
+
+        <section id="appGrid" class="app-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
